@@ -4,7 +4,6 @@
 # copyright (c) 2021 Eqela
 # All rights reserved.
 #
-
-lib sling-tools:0.34.0
+lib sling-tools:0.45.0
 import sling.tools.compiler
-SlingCompilerTool.forSushiApplicationDirectory("app").executeScript(args)
+SlingCompilerTool.forWeb5ApplicationDirectory("app").executeScript(args)
