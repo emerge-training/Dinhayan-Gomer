@@ -45,14 +45,14 @@ func updateTable(table as SQLTableInfo)
     if not db:
         Error.throw("nullDB","updateTable")
     if not db.ensureTableExistsSync(table):
-        Error.throw("MALI", table.getName())
+        Error.throw("Nag erro ra gani mawad ad na ug gana", table.getName())
 
 }
 
-func updateinfoTables
+func updateTables
 {
     var info=SQLTableInfo.forName(INFO)
-    info.addStringKeyColumn("id")
+    info.addIntegerKeyColumn("id")
     info.addStringKeyColumn("fname")
     info.addStringKeyColumn("lname")
     info.addStringKeyColumn("mname")

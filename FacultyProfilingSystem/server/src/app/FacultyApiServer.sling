@@ -17,7 +17,7 @@ func initializeApplication override as bool
 {
     assert base.initializeApplication()
     var db = FacultyDatabase.forContext(ctx)
-    db.updateinfoTables()
+    db.updateTables()
     db.close()
     return true
 }

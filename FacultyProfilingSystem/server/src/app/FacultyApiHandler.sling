@@ -22,7 +22,7 @@ func getDatabase as FacultyDatabase
 {
     if not db {
         db = FacultyDatabase.forContext(getCtx())
-        db.updateinfoTables()
+        db.updateTables()
     }
     return db
 }

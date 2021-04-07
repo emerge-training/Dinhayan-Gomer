@@ -41619,13 +41619,13 @@ function app.FacultyDatabase:updateTable(table)
 		do _g.jk.lang.Error:throw("nullDB", "updateTable") end
 	end
 	if not self.db:ensureTableExistsSync(table) then
-		do _g.jk.lang.Error:throw("MALI", table:getName()) end
+		do _g.jk.lang.Error:throw("Nag erro ra gani mawad ad na ug gana", table:getName()) end
 	end
 end
 
-function app.FacultyDatabase:updateinfoTables()
+function app.FacultyDatabase:updateTables()
 	local info = _g.jk.sql.SQLTableInfo:forName(_g.app.FacultyDatabase.INFO)
-	do info:addStringKeyColumn("id") end
+	do info:addIntegerKeyColumn("id") end
 	do info:addStringKeyColumn("fname") end
 	do info:addStringKeyColumn("lname") end
 	do info:addStringKeyColumn("mname") end
@@ -41902,7 +41902,7 @@ end
 function app.FacultyApiHandler:getDatabase()
 	if not (self.db ~= nil) then
 		self.db = _g.app.FacultyDatabase:forContext(self:getCtx())
-		do self.db:updateinfoTables() end
+		do self.db:updateTables() end
 	end
 	do return self.db end
 end
@@ -42060,7 +42060,7 @@ function app.FacultyApiServer:initializeApplication()
 	end
 	do
 		local db = _g.app.FacultyDatabase:forContext(self.ctx)
-		do db:updateinfoTables() end
+		do db:updateTables() end
 		do db:close() end
 		do return true end
 	end
